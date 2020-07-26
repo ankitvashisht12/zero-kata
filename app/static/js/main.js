@@ -48,11 +48,6 @@ function sendData(idx, playerId){
     }).then(data => console.log(data))
     .catch(error => console.log('ERROR'));
 
-
-    // fetch("https://localhost:5000/data/")
-    // .then(res => {
-        
-    // })
 }
 
 function getChar(ele){
