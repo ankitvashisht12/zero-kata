@@ -31,24 +31,50 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function getChar(ele){
+function sendData(idx, playerId){
+    var index = Number(idx);
+    fetch("/data", {
+        method: "POST",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "idx": index,
+            "pid": playerId,
+        })
+    }).then(res => {
+        return res.json()
+    }).then(data => console.log(data))
+    .catch(error => console.log('ERROR'));
 
+
+    // fetch("https://localhost:5000/data/")
+    // .then(res => {
+        
+    // })
+}
+
+function getChar(ele){
+    
     if(!isChecked(ele)){
         if(count & 1){
             a[Number(ele.id)] = 1; 
             ele.innerHTML = 'X';
             messageBox.innerHTML = "Player 1 ( O ) turn";
+           
         }else{
             a[Number(ele.id)] = 0;
             ele.innerHTML = 'O';
             messageBox.innerHTML = "Player 2 ( X ) turn";
+        
         }
         count+=1;
     }
     
     
     if(count >= 5 && isWon()){
-        console.log(ele.innerHTML + " won the game !!");
+
         messageBox.style.color = 'green';
         messageBox.style.backgroundColor = "#ffffff";
         messageBox.style.borderRadius = '25px';
@@ -65,7 +91,6 @@ function getChar(ele){
         messageBox.style.backgroundColor = "#ffffff";
         messageBox.style.borderRadius = '25px';
         gameOver = true;
-        console.log("DRAW !!");
         messageBox.style.color = 'red';
         messageBox.innerHTML = "DRAW !!"
         sleep(1000).then(() => {
@@ -74,7 +99,6 @@ function getChar(ele){
     }
 
 }
-
 
 function highlightWinner(){
 

@@ -6,3 +6,11 @@ from flask import render_template, request, redirect, url_for
 def index():
     return render_template("index.html")
 
+
+@app.route("/data", methods=["POST", "GET"])
+def data():
+    if request.method=="POST":
+        print(request.get_json())
+        return 'OK', 200
+    else:
+        print("NO data to take away :/")
