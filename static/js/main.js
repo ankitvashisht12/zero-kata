@@ -83,27 +83,6 @@ function updateMarker(data){
     
 }
 
-// function sendData(idx, playerId){
-//     var index = Number(idx);
-//     fetch("/data", {
-//         method: "POST",
-//         headers: {
-//             'Accept': 'application/json',
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             "idx": index,
-//             "pid": playerId,
-//         })
-//     }).then(res => {
-//         return res.json();
-//     }).then(data => {
-//         updateMarker(data);
-//     })
-//     .catch(error => console.log(error));
-
-// }
-
 function getChar(ele){
     
     var sendingData;
@@ -131,34 +110,6 @@ function getChar(ele){
         socket.emit('json', sendingData);
         
     }
-
-    // if(count >= 5 && isWon()){
-
-    //     messageBox.style.color = 'green';
-    //     messageBox.style.backgroundColor = "#ffffff";
-    //     messageBox.style.borderRadius = '25px';
-    //     if(ele.innerHTML == 'X'){
-    //         messageBox.innerHTML = 'Player 2 ( X ) won the game !! 🎉';
-    //     }else messageBox.innerHTML = 'Player 1 ( O ) won the game !! 🎉';
-    //     highlightWinner();
-    //     gameOver = true;
-    //     sleep(1000).then(() => {
-    //         reset();
-    //     })
-    // }else if(count ==9 && !isWon()){
-    //     messageBox.style.color = 'green';
-    //     messageBox.style.backgroundColor = "#ffffff";
-    //     messageBox.style.borderRadius = '25px';
-    //     gameOver = true;
-    //     messageBox.style.color = 'red';
-    //     messageBox.innerHTML = "DRAW !!"
-    //     sleep(1000).then(() => {
-    //         reset();
-    //     })
-    // }
-    
-    
-    
 
 }
 
