@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 socketio = SocketIO(app)
-socketio.init_app(app, cors_allowed_origins="*")
+# socketio.init_app(app, cors_allowed_origins="*")
         
         
 @app.route("/") 
@@ -19,5 +19,5 @@ def handleJson(jsonData):
     emit('json', jsonData, broadcast=True)
 
 
-#if __name__ == "__main__":
-socketio.run(app)
+if __name__ == "__main__":
+    socketio.run(app)
