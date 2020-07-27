@@ -19,5 +19,5 @@ def handleJson(jsonData):
     emit('json', jsonData, broadcast=True)
 
 
-if __name__ == "__main__":
-    socketio.run(app)
+#if __name__ == "__main__":
+socketio.run(app)
