@@ -16,6 +16,7 @@ def index():
 
 @socketio.on('json')
 def handleJson(jsonData):
+    print("Json data received at server end : ", type(jsonData))
     emit('json', jsonData, broadcast=True)
 
 

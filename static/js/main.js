@@ -141,7 +141,7 @@
                 };
             } 
             
-            socket.emit('json', sendingData, function(){
+            socket.emit('json', JSON.stringify(sendingData), function(){
                 console.log(sendingData);
             });
 
