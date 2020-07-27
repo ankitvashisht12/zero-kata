@@ -1,4 +1,3 @@
-document.addEventListener('DOMContentLoaded', function(){
 
     var count = 0;
     var a = [
@@ -174,4 +173,4 @@ document.addEventListener('DOMContentLoaded', function(){
             messageBox.style.borderRadius = '25px';
         }
     }
-});
+

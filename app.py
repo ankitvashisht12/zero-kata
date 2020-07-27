@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, send, emit
-from flask_cors import CORS
 import os
 import json
 
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
-CORS(app)
+
         
         
 @app.route("/") 
