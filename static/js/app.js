@@ -4,7 +4,7 @@ var numSquares = 9;
 var winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
 var gameOver = false;
 var winCells = [];
-var socket = io.connect('http://127.0.0.1:5000');
+var socket = io.connect('https://zero-kata.herokuapp.com/');
 
 var messageBox = document.getElementById('message-box');
 
