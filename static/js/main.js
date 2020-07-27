@@ -40,7 +40,7 @@
     ];
     var gameOver = false;
     var winCells = [];
-    var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
+    var socket = io.connect(location.protocol + '//' + document.domain);
 
     var messageBox = document.getElementById('message-box');
 
@@ -139,7 +139,11 @@
                     "idx": Number(ele.id),
                     "pid": 'p1'
                 };
-            } socket.emit('json', sendingData);
+            } 
+            
+            socket.emit('json', sendingData, function(){
+                console.log(sendingData);
+            });
 
         }
 

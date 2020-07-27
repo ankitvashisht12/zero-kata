@@ -8,7 +8,6 @@ app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
         
-        
 @app.route("/") 
 def index():
     return render_template("index.html")
@@ -21,3 +20,5 @@ def handleJson(jsonData):
 
 if __name__ == "__main__":
     socketio.run(app)
+
+#web: gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 app:app
