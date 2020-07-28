@@ -1,3 +1,6 @@
+import eventlet
+eventlet.monkey_patch()
+
 from flask import Flask, render_template, request, redirect, url_for
 from flask_socketio import SocketIO, send, emit
 import os
@@ -19,6 +22,7 @@ def index():
 def handleJson(jsonData):
     print("Json data received at server end : ", type(jsonData))
     emit('json', jsonData, broadcast=True)
+    socketio.sleep(0)
 
 
 if __name__ == "__main__":

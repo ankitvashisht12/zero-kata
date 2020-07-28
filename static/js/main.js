@@ -160,6 +160,7 @@
 
     socket.on('json', function (jsonData) {
         console.log("Got data");
+        console.log(jsonData)
         updateMarker(jsonData);
     });
 
