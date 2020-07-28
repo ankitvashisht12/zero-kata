@@ -48,7 +48,7 @@
     }
     console.log("port is "+port);
     // var socket = io.connect(location.protocol + '//' + document.domain);
-    var socket = io.connect(location.protocol + '//' + document.domain + port);
+    var socket = io.connect(location.protocol + '//' + document.domain + port, {transports: ['websocket']});
 
     var messageBox = document.getElementById('message-box');
 

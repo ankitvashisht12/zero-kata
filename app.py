@@ -6,7 +6,7 @@ import json
 
 
 app = Flask(__name__)
-socketio = SocketIO(app)
+socketio = SocketIO(app, logger=True, engineio_logger=True)
 socketio.init_app(app, cors_allowed_origins="*")
 
         
