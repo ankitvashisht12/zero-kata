@@ -9,7 +9,7 @@ body{
 
 .player-info-container{
     border-radius: 25px;
-    background-color: #222222;
+    background-color: #333333;
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -42,10 +42,7 @@ body{
     border: #fff 2px solid;
     border-radius: 25px;
     width: 25em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin: -160px 0 0 -12.5em;
+    margin: 10vh auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
    
@@ -54,7 +51,7 @@ body{
 .cell{
     text-align: center;
     padding: 50px 0px;
-    background-color: #222222;
+    background-color: #333333;
     margin: 10px;
     border-radius: 20px;
 }
@@ -64,5 +61,25 @@ body{
     cursor: pointer;
 }
 
+.info{
+    border-radius: 25px;
+    padding: 10px;
+    margin: 1em 0.5em;
+    text-align: center;
+    background-color: #333333;
+}
 
-/* Before click color : #222222 , After click color : #3333333*/
+
+a{
+    text-decoration: none;
+    color: #1ee9df;
+    cursor: pointer;    
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+  
+    
+}
+/* Before click color : #333333 , After click color : #3333333*/
