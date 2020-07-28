@@ -40,7 +40,15 @@
     ];
     var gameOver = false;
     var winCells = [];
-    var socket = io.connect(location.protocol + '//' + document.domain);
+
+    if(location.port){
+        var port = ":" + location.port;
+    }else{
+        var port = "";
+    }
+    console.log("port is "+port);
+    // var socket = io.connect(location.protocol + '//' + document.domain);
+    var socket = io.connect(location.protocol + '//' + document.domain + port);
 
     var messageBox = document.getElementById('message-box');
 
@@ -73,9 +81,10 @@
     }
 
 
-    function updateMarker(data) {
+    function updateMarker(jsonData) {
 
-
+        // console.log(typeof data)
+        data = JSON.parse(jsonData)
         if (data['pid'] == 'p1') {
             document.getElementById((data['idx']).toString()).innerHTML = 'O';
             a[data['idx']] = 0;

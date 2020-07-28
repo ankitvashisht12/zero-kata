@@ -4,6 +4,7 @@ import os
 import json
 
 
+
 app = Flask(__name__)
 socketio = SocketIO(app)
 socketio.init_app(app, cors_allowed_origins="*")
@@ -21,6 +22,7 @@ def handleJson(jsonData):
 
 
 if __name__ == "__main__":
-    socketio.run(app)
+    socketio.run(app, debug=True)
 
 #web: gunicorn -k geventwebsocket.gunicorn.workers.GeventWebSocketWorker -w 1 app:app
+#web:gunicorn --worker-class eventlet -w 1 app:app
